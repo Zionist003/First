@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    display:block;
+}
+ ul {
+    list-style: none;
+    background:grey;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+ } 
+
+ ul li {
+    display: inline-block;
+    position: relative;
+ }
+   
+ul li a {
+    display: block;
+    padding: 20px 25px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+ul li ul.dropdown li{
+    display: block;
+    height: 100%;
+    padding: 0.5rem 1 rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+ul li ul.dropdown{
+    width: 100%;
+    background:grey;
+    position: absolute;
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    display: none;
+}
+ul li a:hover{
+    background:#d3d3d3;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+body{
+    background: #23e3c9;
+    
+}
+#img1:checked ~ .m1 {
+    margin-left: 0;
+}
+.slider{
+    position:relative;
+    width: 100%;
+    margin:auto;
+    overflow:hidden;
+}
+.slider img{
+    width: 100%;
+    display: none;
+}
+img.displaySlide{
+    display: block;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.slider button{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    font-size: 2rem;
+    padding: 10px 15px;
+    background-color: hsla(0, 0%, 0%, 0.658);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.prev{
+    left: 0;
+}
+.next{
+    right: 0;
+}
+@keyframes fade {
+    from {opacity: .5}
+    to {opacity: 1}
+    
+}
+.contact-container{
+    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.contact-left{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+.contact-left-title h2{
+font-weight: 600;
+color: rgb(71, 70, 70);
+font-size: 40px;
+margin-bottom: 5px;
+}
+.contact-left-title hr{
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: rgb(71, 70, 70);
+    border-radius: 10px;
+    margin-bottom: 20px;     
+}
+.contact-inputs{
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500px;
+    color: rgb(71, 70, 70);
+    border-radius: 50px;
+}
+.contact-left textarea{
+    height: 180px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+.contact-inputs:focus{
+    border: 2px solid rgb(71, 70, 70);
+}
+.contact-inputs::placeholder{
+    color: #4b706b;
+}
+.contact-left button{
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #000000;
+    gap: 10px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(270deg, #fff, rgb(128, 174, 185));
+    cursor: pointer;
+    border:2px solid rgb(0, 0, 0);
+}
+.contact-right img{
+    width: 500px;
+}
+@media (max-width: 1000px) {
+    .contact-inputs{
+        width: 80vw;
+    }
+    .contact-right img{
+        display: none;
+    }
+}
